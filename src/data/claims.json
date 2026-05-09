@@ -1,0 +1,54 @@
+{
+  "CLM-2024-001": {
+    "claim_id": "CLM-2024-001",
+    "member_id": "MBR-001",
+    "type": "outpatient",
+    "description": "Specialist consultation — cardiology",
+    "provider": "King Faisal Specialist Hospital",
+    "date_submitted": "2024-11-01",
+    "amount_claimed_sar": 1200,
+    "amount_approved_sar": 1000,
+    "status": "approved",
+    "denial_reason": null,
+    "notes": "Deductible applied"
+  },
+  "CLM-2024-002": {
+    "claim_id": "CLM-2024-002",
+    "member_id": "MBR-002",
+    "type": "maternity",
+    "description": "Normal delivery — inpatient 3 days",
+    "provider": "Saudi German Hospital",
+    "date_submitted": "2024-11-15",
+    "amount_claimed_sar": 18500,
+    "amount_approved_sar": null,
+    "status": "under_review",
+    "denial_reason": null,
+    "notes": "Pending medical report from provider"
+  },
+  "CLM-2024-003": {
+    "claim_id": "CLM-2024-003",
+    "member_id": "MBR-001",
+    "type": "outpatient",
+    "description": "Dental cleaning and X-ray",
+    "provider": "Smile Dental Center",
+    "date_submitted": "2024-11-20",
+    "amount_claimed_sar": 800,
+    "amount_approved_sar": 0,
+    "status": "denied",
+    "denial_reason": "Dental coverage not included in Gold plan",
+    "notes": "Member may appeal within 30 days"
+  },
+  "CLM-2024-004": {
+    "claim_id": "CLM-2024-004",
+    "member_id": "MBR-001",
+    "type": "inpatient",
+    "description": "Knee replacement surgery",
+    "provider": "Dr. Sulaiman Al-Habib Hospital",
+    "date_submitted": "2024-12-01",
+    "amount_claimed_sar": 67000,
+    "amount_approved_sar": null,
+    "status": "pending_approval",
+    "denial_reason": null,
+    "notes": "Amount exceeds standard approval threshold — requires adjuster review"
+  }
+}

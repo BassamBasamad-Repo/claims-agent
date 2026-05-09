@@ -1,0 +1,56 @@
+{
+  "MBR-001": {
+    "member_id": "MBR-001",
+    "name": "Ahmed Al-Rashidi",
+    "national_id": "1098765432",
+    "policy_number": "POL-2024-001",
+    "plan_type": "Gold",
+    "status": "active",
+    "coverage": {
+      "inpatient": true,
+      "outpatient": true,
+      "dental": false,
+      "optical": true,
+      "maternity": false
+    },
+    "deductible_sar": 500,
+    "annual_limit_sar": 500000,
+    "used_limit_sar": 123400
+  },
+  "MBR-002": {
+    "member_id": "MBR-002",
+    "name": "Fatima Al-Zahrani",
+    "national_id": "2087654321",
+    "policy_number": "POL-2024-002",
+    "plan_type": "Silver",
+    "status": "active",
+    "coverage": {
+      "inpatient": true,
+      "outpatient": true,
+      "dental": false,
+      "optical": false,
+      "maternity": true
+    },
+    "deductible_sar": 1000,
+    "annual_limit_sar": 250000,
+    "used_limit_sar": 87200
+  },
+  "MBR-003": {
+    "member_id": "MBR-003",
+    "name": "Khalid Al-Otaibi",
+    "national_id": "1076543210",
+    "policy_number": "POL-2024-003",
+    "plan_type": "Basic",
+    "status": "suspended",
+    "coverage": {
+      "inpatient": true,
+      "outpatient": false,
+      "dental": false,
+      "optical": false,
+      "maternity": false
+    },
+    "deductible_sar": 2000,
+    "annual_limit_sar": 100000,
+    "used_limit_sar": 98500
+  }
+}
