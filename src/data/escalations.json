@@ -1,0 +1,41 @@
+[
+  {
+    "escalation_id": "ESC-20260511151611",
+    "member_id": "MBR-001",
+    "member_name": "Ahmed Al-Rashidi",
+    "claim_id": "CLM-2024-004",
+    "claim_status": "pending_approval",
+    "amount_sar": 67000,
+    "trigger_reason": "amount_threshold_exceeded",
+    "summary": "Member requesting approval for knee replacement surgery SAR 67,000.",
+    "context_so_far": "Verified member MBR-001 is active on Gold plan. Located claim CLM-2024-004 in pending_approval status. Attempted process_approval \u2014 intercepted by threshold hook. Amount exceeds SAR 5,000 autonomous limit.",
+    "escalated_at": "2026-05-11T15:16:11.026865",
+    "adjuster_status": "pending_assignment"
+  },
+  {
+    "escalation_id": "ESC-20260511151732",
+    "member_id": "MBR-002",
+    "member_name": "Fatima Al-Zahrani",
+    "claim_id": "CLM-2024-002",
+    "claim_status": "under_review",
+    "amount_sar": 18500,
+    "trigger_reason": "explicit_member_request",
+    "summary": "Member asked to speak directly with a human adjuster.",
+    "context_so_far": "Member asked about maternity claim CLM-2024-002 status. Claim is under_review pending medical report. Member explicitly requested human contact.",
+    "escalated_at": "2026-05-11T15:17:32.575688",
+    "adjuster_status": "pending_assignment"
+  },
+  {
+    "escalation_id": "ESC-20260511173922",
+    "member_id": "MBR-001",
+    "member_name": "Ahmed Al-Rashidi",
+    "claim_id": "CLM-2024-004",
+    "claim_status": "pending_approval",
+    "amount_sar": 67000,
+    "trigger_reason": "amount_threshold_exceeded",
+    "summary": "Member requesting approval of knee replacement surgery claim (CLM-2024-004) for SAR 67,000 at Dr. Sulaiman Al-Habib Hospital.",
+    "context_so_far": "Verified member identity (MBR-001, Ahmed Al-Rashidi). Confirmed Gold plan is active with inpatient coverage included. Annual limit SAR 500,000 with SAR 123,400 used. Claim is in pending_approval status. Amount exceeds autonomous approval threshold (SAR 5,000) and requires adjuster review.",
+    "escalated_at": "2026-05-11T17:39:22.202049",
+    "adjuster_status": "pending_assignment"
+  }
+]

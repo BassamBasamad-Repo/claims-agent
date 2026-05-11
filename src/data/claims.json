@@ -3,7 +3,7 @@
     "claim_id": "CLM-2024-001",
     "member_id": "MBR-001",
     "type": "outpatient",
-    "description": "Specialist consultation — cardiology",
+    "description": "Specialist consultation \u2014 cardiology",
     "provider": "King Faisal Specialist Hospital",
     "date_submitted": "2024-11-01",
     "amount_claimed_sar": 1200,
@@ -16,7 +16,7 @@
     "claim_id": "CLM-2024-002",
     "member_id": "MBR-002",
     "type": "maternity",
-    "description": "Normal delivery — inpatient 3 days",
+    "description": "Normal delivery \u2014 inpatient 3 days",
     "provider": "Saudi German Hospital",
     "date_submitted": "2024-11-15",
     "amount_claimed_sar": 18500,
@@ -49,6 +49,19 @@
     "amount_approved_sar": null,
     "status": "pending_approval",
     "denial_reason": null,
-    "notes": "Amount exceeds standard approval threshold — requires adjuster review"
+    "notes": "Pending autonomous approval \u2014 amount requires threshold validation"
+  },
+  "CLM-2024-005": {
+    "claim_id": "CLM-2024-005",
+    "member_id": "MBR-002",
+    "type": "outpatient",
+    "description": "Physiotherapy sessions \u2014 6 visits",
+    "provider": "Andalusia Medical Center",
+    "date_submitted": "2024-12-05",
+    "amount_claimed_sar": 1800,
+    "amount_approved_sar": null,
+    "status": "pending_approval",
+    "denial_reason": null,
+    "notes": "Pre-authorization verified"
   }
 }
