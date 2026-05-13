@@ -136,9 +136,22 @@ def update_case_facts(tool_name: str,
         else:
             case_facts.update_from_claim(data)
 
+    elif tool_name == "process_approval":
+        approved_amount = data.get("amount_approved_sar")
+        if approved_amount is not None and approved_amount not in case_facts.amounts_mentioned:
+            case_facts.amounts_mentioned.append(approved_amount)
+        resolved_claim_id = data.get("claim_id")
+        if resolved_claim_id and resolved_claim_id not in case_facts.claim_ids_mentioned:
+            case_facts.claim_ids_mentioned.append(resolved_claim_id)
+        if resolved_claim_id and approved_amount is not None:
+            case_facts.resolved_concerns.append(
+                f"Claim {resolved_claim_id} approved for SAR {float(approved_amount):,.2f}"
+            )
+
     elif tool_name == "escalate_to_adjuster":
         case_facts.escalation_triggered = True
         case_facts.escalation_id = data.get("escalation_id")
+    
 
 
 def run_agent(member_message: str) -> str:
@@ -236,9 +249,12 @@ def run_agent(member_message: str) -> str:
             })
 
         else:
-            # Unexpected stop_reason — surface it clearly
-            print(f"  Unexpected stop_reason: {response.stop_reason}")
-            break
+                print(f"  Unexpected stop_reason: {response.stop_reason}")
+                return (
+                    f"I was unable to complete your request "
+                    f"(reason: {response.stop_reason}). "
+                    f"Please contact support if this persists."
+                )
 
     # Safety cap reached — should not happen in normal operation
     return "I was unable to complete your request. Please contact support."

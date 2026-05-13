@@ -42,6 +42,28 @@ def pre_tool_use_hook(tool_name: str,
                     }
                 }
             }
+        
+    if tool_name == "escalate_to_adjuster":
+            member_id = tool_input.get("member_id")
+            if not member_id:
+                return {
+                    "hook_fired": True,
+                    "blocked": True,
+                    "action": "reject",
+                    "reason": "missing_member_id",
+                    "blocked_result": {
+                        "success": False,
+                        "data": None,
+                        "error": {
+                            "message": (
+                                "Cannot escalate without a verified member_id. "
+                                "Call get_member first to confirm member identity."
+                            ),
+                            "errorCategory": "validation",
+                            "isRetryable": False
+                        }
+                    }
+                }
 
     return {
         "hook_fired": False,

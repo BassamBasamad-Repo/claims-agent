@@ -31,7 +31,7 @@ def process_approval(claim_id: str,
 
     NOT FOR claim lookups or status checks — use lookup_claim for those.
     NOT FOR amounts above SAR 5,000 — those require adjuster review and
-    will be intercepted by the PostToolUse hook before execution.
+    will be intercepted by the PreToolUse hook before execution.
 
     This is a write operation and is irreversible once submitted.
 
