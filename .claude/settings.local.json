@@ -3,5 +3,8 @@
     "allow": [
       "PowerShell(Get-Item \"E:\\\\AspiryOneSolutions\\\\GitHubRepo\\\\claims-agent\\\\.claude\\\\commands\\\\new-tool.md\" | Select-Object Length, LastWriteTime; [System.IO.File]::ReadAllText\\(\"E:\\\\AspiryOneSolutions\\\\GitHubRepo\\\\claims-agent\\\\.claude\\\\commands\\\\new-tool.md\"\\) | Format-Hex)"
     ]
-  }
+  },
+  "disabledMcpjsonServers": [
+    "claims-tools"
+  ]
 }
