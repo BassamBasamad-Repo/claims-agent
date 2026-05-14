@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "claims-tools": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "src.mcp_server"],
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}"
+      },
+      "description": "Claims resolution MCP tools — get_member, lookup_claim, process_approval, escalate_to_adjuster"
+    }
+  }
+}

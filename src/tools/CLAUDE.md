@@ -42,3 +42,9 @@ These rules apply in addition to the project-level CLAUDE.md.
 - Read tools (get_member, lookup_claim): never write to any file
 - Write tools (process_approval, escalate_to_adjuster): always validate
   preconditions before writing
+
+  ## Environment — Windows specific
+Python interpreter: .venv\Scripts\python.exe
+Run tests with: .venv\Scripts\python.exe -m pytest tests/ -v
+Run agent with: .venv\Scripts\python.exe -m src.agent.loop
+Do not use bare `python` or `python3` commands — use the venv path above.

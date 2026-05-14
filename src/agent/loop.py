@@ -8,6 +8,7 @@ from src.tools.get_member import get_member, GET_MEMBER_TOOL
 from src.tools.lookup_claim import lookup_claim, LOOKUP_CLAIM_TOOL
 from src.tools.process_approval import process_approval, PROCESS_APPROVAL_TOOL
 from src.tools.escalate_to_adjuster import escalate_to_adjuster, ESCALATE_TO_ADJUSTER_TOOL
+from src.tools.check_eligibility import check_eligibility, CHECK_ELIGIBILITY_TOOL
 from src.agent.hooks import post_tool_use_hook,pre_tool_use_hook
 from src.agent.session import CaseFacts
 
@@ -19,6 +20,7 @@ load_dotenv(override=True)
 TOOLS = [
     GET_MEMBER_TOOL,
     LOOKUP_CLAIM_TOOL,
+    CHECK_ELIGIBILITY_TOOL,
     PROCESS_APPROVAL_TOOL,
     ESCALATE_TO_ADJUSTER_TOOL
 ]
@@ -27,6 +29,7 @@ TOOLS = [
 TOOL_FUNCTIONS = {
     "get_member": get_member,
     "lookup_claim": lookup_claim,
+    "check_eligibility": check_eligibility,
     "process_approval": process_approval,
     "escalate_to_adjuster": escalate_to_adjuster
 }
@@ -147,6 +150,15 @@ def update_case_facts(tool_name: str,
             case_facts.resolved_concerns.append(
                 f"Claim {resolved_claim_id} approved for SAR {float(approved_amount):,.2f}"
             )
+
+    elif tool_name == "check_eligibility":
+        category = data.get("care_category", "")
+        eligible = data.get("eligible")
+        if eligible is not None:
+            status = "eligible" if eligible else f"not eligible ({data.get('reason', 'unknown')})"
+            entry = f"Eligibility checked: {category} = {status}"
+            if entry not in case_facts.resolved_concerns:
+                case_facts.resolved_concerns.append(entry)
 
     elif tool_name == "escalate_to_adjuster":
         case_facts.escalation_triggered = True

@@ -1,6 +1,6 @@
 [
   {
-    "escalation_id": "ESC-20260513180756",
+    "escalation_id": "ESC-20260514134101",
     "member_id": "MBR-001",
     "member_name": "Ahmed Al-Rashidi",
     "claim_id": "CLM-2024-004",
@@ -9,7 +9,7 @@
     "trigger_reason": "amount_threshold_exceeded",
     "summary": "Member requesting approval for knee surgery.",
     "context_so_far": "Verified member identity. Claim found. Hook blocked approval.",
-    "escalated_at": "2026-05-13T18:07:56.777797",
+    "escalated_at": "2026-05-14T13:41:01.993547",
     "adjuster_status": "pending_assignment"
   }
 ]
