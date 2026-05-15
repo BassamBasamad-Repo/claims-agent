@@ -2,6 +2,8 @@ import os
 from typing import Any
 from dotenv import load_dotenv
 import anthropic
+import concurrent.futures
+import time
 
 load_dotenv(override=True)
 
@@ -41,26 +43,62 @@ def run_coordinator(
     print(f"\n[Coordinator] Identified procedure: {procedure}")
 
     # --- PHASE 1: Parallel independent research ---
-    # Policy and regulatory agents are independent — run both
-    # In production these would run truly in parallel via threading
-    # For clarity we run sequentially but the architecture is parallel
+    # Policy and regulatory agents are independent of each other.
+    # Run both simultaneously using ThreadPoolExecutor.
+    # Total wait time = max(policy_time, regulatory_time)
+    # NOT sum(policy_time + regulatory_time)
 
-    print(f"\n[Coordinator] Spawning policy agent...")
-    policy_result = run_policy_agent(
-        plan_type=plan_type,
-        procedure=procedure,
-        question=question
-    )
+    print(f"\n[Coordinator] Spawning policy and regulatory agents in parallel...")
+
+    # At the start of Phase 1
+    phase1_start = time.time()
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+
+        policy_future = executor.submit(
+            run_policy_agent,
+            plan_type=plan_type,
+            procedure=procedure,
+            question=question
+        )
+
+        regulatory_future = executor.submit(
+            run_regulatory_agent,
+            procedure=procedure,
+            question=question
+        )
+
+       # Collect policy result
+    try:
+        policy_result = policy_future.result(timeout=60)
+    except concurrent.futures.TimeoutError:
+        print(f"[Coordinator] WARNING: Policy agent timed out")
+        policy_result = {
+            "success": False,
+            "agent": "policy_agent",
+            "findings": None,
+            "error": "transient — agent timeout after 60 seconds"
+        }
+
+    # Collect regulatory result
+    try:
+        regulatory_result = regulatory_future.result(timeout=60)
+    except concurrent.futures.TimeoutError:
+        print(f"[Coordinator] WARNING: Regulatory agent timed out")
+        regulatory_result = {
+            "success": False,
+            "agent": "regulatory_agent",
+            "findings": None,
+            "error": "transient — agent timeout after 60 seconds"
+        }
+
     print(f"[Coordinator] Policy agent: success={policy_result['success']}")
-
-    print(f"\n[Coordinator] Spawning regulatory agent...")
-    regulatory_result = run_regulatory_agent(
-        procedure=procedure,
-        question=question
-    )
-    print(f"[Coordinator] Regulatory agent: "
-          f"success={regulatory_result['success']}")
-
+    print(f"[Coordinator] Regulatory agent: success={regulatory_result['success']}")
+    phase1_duration = time.time() - phase1_start
+    print(f"[Coordinator] Parallel research completed in "
+      f"{phase1_duration:.1f}s")
+    
+    
     # --- PHASE 2: Assess partial failures ---
     coverage_gaps = []
 

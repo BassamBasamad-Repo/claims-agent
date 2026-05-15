@@ -104,7 +104,7 @@ if __name__ == "__main__":
         question="Does my insurance cover weight loss surgery?"
     )
 
-    # Scenario 3 — timeout simulation
+    # Scenario 3 — timeout simulation with parallel execution
     print("\n\n" + "="*60)
     print("SCENARIO 3: Regulatory agent timeout — partial failure")
     print("="*60)
@@ -113,7 +113,9 @@ if __name__ == "__main__":
     original_run = reg_module.run_regulatory_agent
 
     def simulated_timeout(procedure, question, **kwargs):
-        print(f"  [TIMEOUT SIMULATION] Regulatory agent timed out")
+        import time
+        print(f"  [TIMEOUT SIMULATION] Regulatory agent timed out after 30s")
+        time.sleep(1)  # Simulate delay without actually waiting 30s
         return {
             "success": False,
             "agent": "regulatory_agent",
@@ -130,7 +132,7 @@ if __name__ == "__main__":
     )
 
     reg_module.run_regulatory_agent = original_run
-    
+
 
     # Test semantic inference directly
     print("\n" + "="*60)
