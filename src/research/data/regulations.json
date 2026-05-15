@@ -1,0 +1,25 @@
+{
+  "bariatric_surgery": {
+    "procedure": "bariatric_surgery",
+    "regulatory_body": "Council of Cooperative Health Insurance (CCHI)",
+    "last_updated": "2024-01-01",
+    "mandatory_requirements": [
+      "BMI must be 35 or above with at least one obesity-related comorbidity",
+      "BMI must be 40 or above regardless of comorbidities",
+      "Documented failure of non-surgical weight loss for minimum 6 months",
+      "Psychological evaluation completed and approved",
+      "Pre-authorization from insurer mandatory before procedure"
+    ],
+    "insurer_obligations": [
+      "All CCHI-licensed insurers must cover bariatric surgery when criteria met",
+      "Pre-authorization must be processed within 15 business days",
+      "Denial must include written justification and appeal rights"
+    ],
+    "member_rights": [
+      "Right to appeal denial within 30 days",
+      "Right to second medical opinion at insurer expense",
+      "Right to expedited review in urgent cases within 72 hours"
+    ],
+    "conflicting_notes": "CCHI mandates coverage when criteria met. Individual plan terms may impose additional requirements beyond CCHI minimums."
+  }
+}

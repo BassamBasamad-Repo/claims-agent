@@ -1,0 +1,50 @@
+{
+  "Gold": {
+    "plan_name": "Gold",
+    "insurer": "AlShifa Insurance",
+    "covered_procedures": [
+      "inpatient_surgery",
+      "outpatient_consultation",
+      "physiotherapy",
+      "bariatric_surgery"
+    ],
+    "bariatric_surgery_requirements": {
+      "covered": true,
+      "minimum_bmi": 35,
+      "required_comorbidities": ["type_2_diabetes", "hypertension"],
+      "pre_authorization_required": true,
+      "waiting_period_months": 6,
+      "max_benefit_sar": 80000,
+      "excluded_procedures": ["cosmetic_revision", "lap_band_removal"]
+    },
+    "notes": "Bariatric coverage subject to medical necessity review"
+  },
+  "Silver": {
+    "plan_name": "Silver",
+    "insurer": "AlShifa Insurance",
+    "covered_procedures": [
+      "inpatient_surgery",
+      "outpatient_consultation",
+      "physiotherapy"
+    ],
+    "bariatric_surgery_requirements": {
+      "covered": false,
+      "reason": "Bariatric surgery not included in Silver plan",
+      "upgrade_option": "Gold plan includes bariatric coverage"
+    },
+    "notes": "Silver plan excludes weight management surgical procedures"
+  },
+  "Basic": {
+    "plan_name": "Basic",
+    "insurer": "AlShifa Insurance",
+    "covered_procedures": [
+      "inpatient_surgery",
+      "outpatient_consultation"
+    ],
+    "bariatric_surgery_requirements": {
+      "covered": false,
+      "reason": "Bariatric surgery not included in Basic plan"
+    },
+    "notes": "Basic plan covers emergency and essential procedures only"
+  }
+}
