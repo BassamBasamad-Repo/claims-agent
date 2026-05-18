@@ -1,0 +1,37 @@
+INSURANCE CLAIM FORM
+AlShifa Insurance — Claim Reference: CLM-EXT-001
+
+MEMBER INFORMATION
+Member Name: Ahmed Al-Rashidi
+Member ID: MBR-001
+Policy Number: POL-2024-001
+Date of Birth: 15/03/1980
+National ID: 1098765432
+
+MEDICAL INFORMATION
+Date of Service: 2024-11-15
+Provider Name: King Faisal Specialist Hospital
+Provider License: MOH-12345
+Attending Physician: Dr. Sami Al-Ghamdi
+
+PRIMARY DIAGNOSIS
+ICD-10 Code: I50.9
+Diagnosis: Heart failure, unspecified
+
+SECONDARY DIAGNOSIS
+ICD-10 Code: E11.9
+Diagnosis: Type 2 diabetes mellitus without complications
+
+PROCEDURE
+CPT Code: 93306
+Procedure: Echocardiography with Doppler
+
+FINANCIAL INFORMATION
+Amount Billed: SAR 3,500.00
+Amount Paid by Member: SAR 500.00
+Amount Claimed: SAR 3,000.00
+
+DECLARATION
+I certify that the information above is accurate and complete.
+Signature: Ahmed Al-Rashidi
+Date: 20/11/2024

@@ -1,0 +1,20 @@
+INSURANCE CLAIM FORM
+AlShifa Insurance
+
+MEMBER INFORMATION
+Member Name: Khalid Al-Otaibi
+Member ID: MBR-003
+Policy Number: POL-2024-003
+
+MEDICAL INFORMATION
+Date of Service: 2024-12-01
+Provider Name: National Guard Hospital
+
+PRIMARY DIAGNOSIS
+Diagnosis: Knee pain — chronic
+
+FINANCIAL INFORMATION
+Amount Claimed: SAR 1,800.00
+
+NOTE: ICD code not provided by physician.
+CPT code pending — procedure type to be confirmed.

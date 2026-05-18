@@ -1,0 +1,26 @@
+نموذج المطالبة التأمينية — INSURANCE CLAIM FORM
+AlShifa Insurance
+
+القسم العربي — ARABIC SECTION
+اسم العضو: فاطمة الزهراني
+رقم العضوية: MBR-002
+رقم الوثيقة: POL-2024-002
+تاريخ الخدمة: 2024-11-20
+مقدم الخدمة: مستشفى سعودي ألماني
+التشخيص الرئيسي: فشل القلب الاحتقاني
+رمز ICD: I50.0
+المبلغ المطالب به: 4,200 ريال سعودي
+
+ENGLISH SECTION — القسم الإنجليزي
+Member Name: Fatima Al-Zahrani
+Member ID: MBR-002
+Policy Number: POL-2024-002
+Date of Service: 2024-11-20
+Provider: Saudi German Hospital
+Primary Diagnosis: Congestive heart failure
+ICD-10 Code: I50.1
+Amount Claimed: SAR 4,200.00
+Physician: Dr. Layla Hassan
+
+NOTE: Bilingual form — Arabic section completed by provider,
+English section completed by billing department.
